@@ -1,0 +1,57 @@
+.home{
+	padding: 30px;
+	text-align: center;
+}
+.home .title{
+	text-align: center;
+}
+.title_left{
+	width: 20%;
+	display: inline-block;
+	margin: 0 15px;
+}
+.title_left >h3{
+	margin: 0;
+	font-size: 16px;
+	background: #3ac0e8;
+	color: #fff;
+	padding: 10px 15px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.title_right {
+	width: 20%;
+	display: inline-block;
+	margin: 0 15px;
+}
+.title_right >h3{
+	margin: 0;
+	font-size: 16px;
+	background: #f18830;
+	color: #fff;
+	padding: 10px 15px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.content{
+	width: 43%;
+	margin: 60px auto 15px;
+}
+.content > h3{
+
+}
+.show_data{
+	margin-top: 30px;
+	text-align: left;
+}
+.title_bottom{
+
+}
+.title_bottom >p{
+
+}
+.title_bottom > p >a{
+
+}

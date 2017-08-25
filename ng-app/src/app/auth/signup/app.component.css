@@ -1,0 +1,27 @@
+.signup{
+	width: 30%;
+	margin: 50px auto;
+	box-sizing: border-box;
+	padding: 50px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+.signupForm{
+
+}
+.signupForm >.form-group{
+	width: 100%;
+}
+.signupForm >.form-group >label{
+
+}
+.signupForm >.form-group >div.input-group{
+	width: 100%;
+}
+.signupForm >.form-group >div.input-group >div{
+	width: 45px;
+}
+.signupForm >.form-group >div.input-group >input{
+
+}

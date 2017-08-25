@@ -1,0 +1,56 @@
+<div class="home">
+	<div class="title">
+		<div class="title_left">
+			<h3>> 1 Lac people have earned</h3>
+		</div>
+		<div class="title_right">
+			<h3>> 31,000 submissions</h3>
+		</div>
+	</div>
+	<div class="content">
+		<h3>Enquire</h3>
+		<div class="form-group">
+			<input class="form-control" type="text" name="city" placeholder="Enter City" [(ngModel)]="enquire.city" >
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" name="locality" placeholder="Enter Locality" [(ngModel)]="enquire.locality" >
+		</div>
+		<div class="form-group">
+			<select class="form-control" [(ngModel)]="enquire.option" >
+				<option value="buy">Buy</option>
+				<option value="rent">Rent</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<select class="form-control" [(ngModel)]="enquire.fields" >
+				<option value="resi">Residential</option>
+				<option value="land">Land</option>
+				<option value="comm">Commercial</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<a class="btn btn-primary" (click)="search()" >Go</a>
+		</div>
+	</div>
+	<div class="show_data" [hidden]="!showdata" >
+		<table class="table table-striped">
+			<thead>
+				<th>Locality</th>
+				<th>Society</th>
+				<th>Sq Ft</th>
+				<th>Price</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let obj of listData | slice:0:5;">
+					<td>{{ obj.locality }}</td>
+					<td>{{ obj.society }}</td>
+					<td>{{ obj.sq_ft }}</td>
+					<td>{{ obj.price }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="title_bottom">
+		<p>want to contribute to help others? <a href="">Click here</a></p>
+	</div>
+</div>
