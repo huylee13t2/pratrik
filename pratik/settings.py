@@ -162,18 +162,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/ng-app/'
+STATIC_URL = '/dist/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'ng-app/dist'),
+    os.path.join(BASE_DIR, 'dist'),
     os.path.join(BASE_DIR, '.tmp/serve'),
     os.path.join(BASE_DIR, 'bower_components'),
     os.path.join(BASE_DIR, 'node_modules'),
 ]
 
 
-MEDIA_URL = 'ng-app/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'ng-app/')
+MEDIA_URL = 'dist/assets/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'dist/')
 
 
 LOGIN_REDIRECT_URL = '/'
