@@ -29,8 +29,9 @@ export class LoginComponent {
 			if(res.result > 0){
 				let data = res.data;
 				localStorage.setItem('token', data.token);
-				localStorage.setItem('user', JSON.stringify({'username' : data.username, 'email' : data.email, 'avatar' : data.avatar}));
+				localStorage.setItem('user', JSON.stringify({'username' : data.username, 'email' : data.email, 'avatar' : data.avatar, 'isAdmin' : data.isAdmin }));
 				this.router.navigate(['/']);
+				window.location.reload();
 			}
 		});
 	}

@@ -93,6 +93,7 @@ def login(request):
 				'email' : account.user.email,
 				'token' : account.token,
 				'avatar' : account.avatar.name,
+				'isAdmin' : account.isAdmin,
 			}
 		}
 	else:

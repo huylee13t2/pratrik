@@ -20,6 +20,7 @@ class Account(models.Model):
 	phone = models.IntegerField(default=0)
 	city = models.CharField(max_length=255, blank=True, null=True)
 	avatar = models.ImageField(upload_to=content_file_name, default='avt.png', null=True)
+	isAdmin = models.BooleanField(blank=True, default=False)
 	token = models.CharField(max_length=255, blank=True, null=True)
 
 	def __str__(self):
