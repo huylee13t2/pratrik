@@ -110,7 +110,10 @@
     <aside class="main-sidebar hidden-print">
         <section class="sidebar" [hidden]="!check_login" >
             <div class="user-panel">
-                <div class="pull-left image img-thumbnail img-circle"><img class="img-circle" src="./assets/images/{{ user.avatar }}" alt="User Image"></div>
+                <div class="pull-left image img-thumbnail img-circle">
+                    <img class="img-circle" src="ng-app/assets/images/{{ user.avatar }}" alt="User Image">
+                    <!-- <img class="img-circle" src="./assets/images/{{ user.avatar }}" alt="User Image"> -->
+                </div>
                 <div class="pull-left info">
                     <p>{{ user.username }}</p>
                     <p class="designation">{{ user.email }}</p>
