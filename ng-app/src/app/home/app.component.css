@@ -55,3 +55,23 @@
 .title_bottom > p >a{
 
 }
+.action_signup{
+	text-align: center;
+}
+.action_signup >p{
+	font-size: 18px;
+	padding: 30px;
+}
+.action_signup >p >a{
+
+}
+.action_signup >p >a.btn_login{
+
+}
+.action_signup >p >a.btn_signup{
+
+}
+.show_more{
+	text-align: center;
+	margin-bottom: 30px;
+}

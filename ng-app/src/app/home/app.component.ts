@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit{
 		fields : '',
 	};
 
+	check_login = false;
 	showdata = false;
 	listData = [];
 
@@ -22,7 +23,11 @@ export class HomeComponent implements OnInit{
 	constructor(
 		private _main: MainService,
 	){
-
+		let token = localStorage.getItem('token');
+		console.log(token)
+		if(token != null){
+			this.check_login = true;
+		}
 	}
 
 	ngOnInit() : void{
@@ -32,6 +37,17 @@ export class HomeComponent implements OnInit{
 	search(){
 		console.log('search')
 		console.log(this.enquire)
+
+		localStorage.setItem(
+			'keywork', 
+			JSON.stringify({
+				'city' : this.enquire.city, 
+				'locality' : this.enquire.locality, 
+				'option': this.enquire.option, 
+				'fields' : this.enquire.fields
+			})
+		);
+
 		this._main.search(this.enquire).then(res =>{
 			console.log(res)
 			if(res.result > 0){

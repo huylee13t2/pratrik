@@ -49,6 +49,17 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="action_signup" [hidden]="check_login" >
+			<p>
+				To view <strong>{{listData.length}}</strong> more result 
+				<a routerLink="/login" class="btn btn-primary btn_login">Login</a>
+				or
+				<a routerLink="/signup" class="btn btn-primary btn_signup">Signup</a>
+			</p>
+		</div>
+		<div class="show_more" [hidden]="!check_login">
+			<a routerLink="/list" class="btn btn-default">Load more</a>
+		</div>
 	</div>
 	<div class="title_bottom">
 		<p>want to contribute to help others? <a href="">Click here</a></p>

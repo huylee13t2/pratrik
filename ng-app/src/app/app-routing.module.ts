@@ -1,7 +1,10 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// home
 import { HomeComponent } from './home/app.component';
+import { HomeListComponent } from './home/list/app.component';
+import { HomeViewComponent } from './home/view/app.component';
 import { AdminComponent } from './admin/app.component';
 
 // auth
@@ -26,10 +29,14 @@ const routes: Routes = [
         path: 'login', 
         component: LoginComponent,
     },
-    // { 
-    //     path: 'login', 
-    //     component: LoginComponent,
-    // },
+    { 
+        path: 'list', 
+        component: HomeListComponent,
+    },
+    { 
+        path: 'list/view/:id', 
+        component: HomeViewComponent,
+    },
     
     { path: '**', redirectTo: '' }
 ];

@@ -35,6 +35,13 @@ export class MainService{
 		return this.http.post(url, fd).toPromise().then(response => response.json()).catch(this.handleError);
 	}
 
+	public getView(id : number) : Promise<any>{
+		console.log('get view')
+		let url = `${this.url_http}api/list/view/${id}`;
+
+		return this.http.get(url).toPromise().then(response => response.json()).catch(this.handleError);
+	}
+
 	// buy product
 	// buyProduct(id : number, record : number, user_id : number) : Promise<any> {
 	// 	const url = this.url_http + 'shop/buy/';

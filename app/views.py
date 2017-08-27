@@ -11,6 +11,29 @@ from app.models import Account, Locality, Society, Information
 def index(request):
 	return render(request, 'index.html')
 
+def list_view(request, pk):
+	inf = Information.objects.get(id = pk)
+
+	societies = Society.objects.filter(Q(locality__name = inf.society.locality.name))
+
+	list_society = []
+	for obj in societies:
+		list_society.append({
+			'name' : obj.name
+		})
+
+	# list_society.append({'locality' : inf.society.locality.name})
+
+	response = {
+		'result' : inf.id,
+		'data' : {
+			'societies': list_society,
+			'locality' : inf.society.locality.name,
+		}
+	}
+
+	return JsonResponse(response)
+
 @csrf_exempt
 def search(request):
 	city = request.POST.get('city')

@@ -30,8 +30,9 @@ export class LoginComponent {
 				let data = res.data;
 				localStorage.setItem('token', data.token);
 				localStorage.setItem('user', JSON.stringify({'username' : data.username, 'email' : data.email, 'avatar' : data.avatar, 'isAdmin' : data.isAdmin }));
-				this.router.navigate(['/']);
-				window.location.reload();
+				// window.location.reload();
+				// this.router.navigate(['/']);
+				document.location.href = '/';
 			}
 		});
 	}

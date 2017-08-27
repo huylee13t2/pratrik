@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { MainComponent } from './main/app.component';
 import { HomeComponent } from './home/app.component';
+import { HomeListComponent } from './home/list/app.component';
+import { HomeViewComponent } from './home/view/app.component';
 import { AdminComponent } from './admin/app.component';
 
 // auth
@@ -20,6 +22,8 @@ import { MainService } from './app.services';
 	declarations: [
 		MainComponent,
 		HomeComponent,
+		HomeListComponent,
+		HomeViewComponent,
 		AdminComponent,
 		// auth
 		SignupComponent,
