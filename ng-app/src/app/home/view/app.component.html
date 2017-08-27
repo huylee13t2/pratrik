@@ -1,0 +1,13 @@
+<div class="view_locality">
+	<h3>{{ data.locality }}</h3>
+	<p>Some popular societies in this locality</p>
+	<div class="ctn_locality">
+		<p class="item_society" *ngFor="let obj of data.societies">
+			<a href="">{{ obj.name }}</a>
+		</p>
+	</div>
+	<div class="view_price">
+		<h3>Avg. per Sq Ft Price in Locality:</h3>
+		<p>35.00 per Sq Ft.</p>
+	</div>
+</div>

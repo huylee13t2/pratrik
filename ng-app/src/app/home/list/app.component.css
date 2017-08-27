@@ -1,0 +1,23 @@
+.content_list{
+    padding: 30px;
+    background: #f5f5f5;
+    margin: 15px 30px;
+}
+.content_list >table >thead >th{
+	padding: 7px;
+}
+.action_btn{
+	text-align: right;
+}
+.action_btn >a{
+	font-size: 18px;
+}
+.tb_action{
+	width: 10%;
+}
+.tb_action >a{
+	width: 50%;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
