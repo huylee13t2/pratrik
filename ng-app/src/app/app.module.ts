@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/app.component';
 
 // auth
 import { SignupComponent } from './auth/signup/app.component';
+import { LoginComponent } from './auth/login/app.component';
 
 // service
 import { MainService } from './app.services';
@@ -22,6 +23,7 @@ import { MainService } from './app.services';
 		AdminComponent,
 		// auth
 		SignupComponent,
+		LoginComponent,
 	],
 	imports: [
 		BrowserModule,

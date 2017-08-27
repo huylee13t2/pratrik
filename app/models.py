@@ -19,7 +19,7 @@ class Account(models.Model):
 	user = models.ForeignKey(User, blank=True)
 	phone = models.IntegerField(default=0)
 	city = models.CharField(max_length=255, blank=True, null=True)
-	avatar = models.ImageField(upload_to=content_file_name, null=True)
+	avatar = models.ImageField(upload_to=content_file_name, default='avt.png', null=True)
 	token = models.CharField(max_length=255, blank=True, null=True)
 
 	def __str__(self):

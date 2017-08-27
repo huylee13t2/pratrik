@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/app.component';
 
 // auth
 import { SignupComponent } from './auth/signup/app.component';
+import { LoginComponent } from './auth/login/app.component';
 
 
 const routes: Routes = [
@@ -21,10 +22,10 @@ const routes: Routes = [
         path: 'signup',
         component: SignupComponent,
     },
-    // { 
-    //     path: 'signup', 
-    //     component: SignupComponent,
-    // },
+    { 
+        path: 'login', 
+        component: LoginComponent,
+    },
     // { 
     //     path: 'login', 
     //     component: LoginComponent,
@@ -34,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
-	exports: [ RouterModule ]
+    imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
+    exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

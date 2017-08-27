@@ -11,8 +11,11 @@ import {Observable} from 'rxjs/Rx';
 export class MainService{
 	private headers = new Headers({
 		'Content-Type': 'application/json; charset=utf-8',
+		"Access-Control-Allow-Origin":"*",
+		'Access-Control-Allow-Headers': '*',
 	});
 	private url_http = 'http://localhost:8000/';
+	// private url_http = 'http://localhost:8000/';
 
 	constructor(private http : Http, location: Location,){
 		// this.url_http = window.location.origin + '/';
@@ -41,6 +44,34 @@ export class MainService{
 	// 	fd.append('record', record);
 	// 	return this.http.post(url, fd).toPromise().then(response => response.json()).catch(this.handleError);
 	// }
+
+
+	// user
+	public signup(data) : Promise<any> {
+		let url = this.url_http + 'api/signup';
+		console.log(url)
+		console.log(data)
+		let fd = new FormData();
+		fd.append('username', data.username);
+		fd.append('password', data.password);
+		fd.append('email', data.email);
+		fd.append('city', data.city);
+		fd.append('phone', data.phone_number);
+
+		return this.http.post(url, fd).toPromise().then(response => response.json()).catch(this.handleError);
+	}
+
+	public login(data) : Promise<any> {
+		console.log('====> login')
+		let url = this.url_http + 'api/login';
+		console.log(url)
+		console.log(data)
+		let fd = new FormData();
+		fd.append('username', data.username);
+		fd.append('password', data.password);
+
+		return this.http.post(url, fd).toPromise().then(response => response.json()).catch(this.handleError);
+	}
 
 
 	private handleError(error: any): Promise<any> {

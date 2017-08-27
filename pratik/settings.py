@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from corsheaders.defaults import default_methods
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -57,7 +59,37 @@ CORS_ORIGIN_WHITELIST = (
     'google.com',
     'hostname.example.com',
     'localhost:4200',
+    '127.0.0.1:4200',
     '127.0.0.1:9000'
+)
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_METHODS = default_methods + (
+    'POKE',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'my-custom-header',
 )
 
 ROOT_URLCONF = 'pratik.urls'
@@ -65,7 +97,9 @@ ROOT_URLCONF = 'pratik.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'ng-app')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,4 +162,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/ng-app/'
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'ng-app/dist'),
+    os.path.join(BASE_DIR, '.tmp/serve'),
+    os.path.join(BASE_DIR, 'bower_components'),
+    os.path.join(BASE_DIR, 'node_modules'),
+]
+
+
+MEDIA_URL = 'ng-app/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'ng-app/')
+
+
+LOGIN_REDIRECT_URL = '/'
