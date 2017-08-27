@@ -14,7 +14,7 @@ export class MainService{
 		"Access-Control-Allow-Origin":"*",
 		'Access-Control-Allow-Headers': '*',
 	});
-	private url_http = 'http://localhost:8000/';
+	private url_http = 'http://pratrik.pythonanywhere.com/';
 	// private url_http = 'http://localhost:8000/';
 
 	constructor(private http : Http, location: Location,){
